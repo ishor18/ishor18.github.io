@@ -19,3 +19,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+// Prevent selecting past dates
+const datePicker = document.getElementById('bookingDate');
+if(datePicker) {
+    const today = new Date().toISOString().split('T')[0];
+    datePicker.setAttribute('min', today);
+}
+
+// Check if user just returned from a successful booking
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('status') === 'success') {
+        const msg = document.getElementById('successMessage');
+        if(msg) {
+            msg.style.display = 'block';
+            
+            // Hide the message automatically after 5 seconds
+            setTimeout(() => {
+                msg.style.display = 'none';
+                // Clean the URL so the message doesn't pop up if they refresh
+                window.history.replaceState({}, document.title, "/");
+            }, 5000);
+        }
+    }
+}
