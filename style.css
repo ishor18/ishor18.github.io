@@ -104,3 +104,156 @@ footer {
     .nav-links { display: none; } /* Simplified for this example */
     .hero h1 { font-size: 2.5rem; }
 }
+.booking-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.btn-full {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.status-msg {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.booking-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.btn-full {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.status-msg {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .form-row { flex-direction: column; gap: 0; }
+}
+.email-contact {
+    margin: 20px 0;
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--dark); /* Uses the dark color from your theme */
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.email-link i {
+    margin-right: 12px; /* Space between icon and text */
+    color: var(--primary); /* Uses the professional blue color */
+    font-size: 1.3rem;
+}
+
+.email-link:hover {
+    color: var(--primary);
+    transform: translateX(5px); /* Slight movement effect on hover */
+}
+.email-link i { color: #ea4335; margin-right: 10px; } /* Gmail Red */
+.whatsapp-link i { color: #25d366; margin-right: 10px; } /* WhatsApp Green */
+
+.contact-methods a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+.map-container {
+    width: 100%;
+    border-radius: 15px; /* Rounded corners for a modern look */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.map-container iframe {
+    display: block; /* Removes any gaps at the bottom */
+}
