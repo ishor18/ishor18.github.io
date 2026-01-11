@@ -37,6 +37,7 @@ body {
     z-index: 1000;
 }
 
+
 .logo { font-weight: 700; font-size: 1.5rem; letter-spacing: 1px; }
 .logo span { color: var(--primary); }
 
@@ -49,7 +50,21 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80'); /* IT Background */
+                url('ishoracharya.png'); /* IT Background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+/* Hero */
+.zero {
+    height: 100vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                url(''); /* IT Background */
     background-size: cover;
     display: flex;
     align-items: center;
@@ -57,6 +72,8 @@ body {
     text-align: center;
     color: white;
 }
+
+
 
 .highlight { color: var(--primary); }
 .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
@@ -93,10 +110,13 @@ body {
 
 /* Footer */
 footer {
+     display: flex;
     text-align: center;
-    padding: 40px;
+    padding: 30px;
     background: var(--dark);
     color: white;
+     width: 100%;
+     
 }
 
 /* Mobile Responsive */
@@ -256,4 +276,29 @@ footer {
 
 .map-container iframe {
     display: block; /* Removes any gaps at the bottom */
+}
+.typewriter h1 {
+  overflow: hidden; /* Hide text until it's "typed" */
+  border-right: .15em solid #2563eb; /* The blinking cursor */
+  white-space: nowrap; /* Keep text on one line */
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  width: 0; /* Start with no width */
+  
+  /* steps(22) should match the number of characters in your text */
+  animation: 
+    typing 3.5s steps(22, end) forwards,
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect: expanding width */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The cursor blinking effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #2563eb; }
 }
