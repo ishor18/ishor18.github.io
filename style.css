@@ -48,7 +48,7 @@ body {
 
 /* Hero */
 .hero {
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
                 url('ishoracharya.png'); /* IT Background */
     background-size: cover;
@@ -62,7 +62,7 @@ body {
 }
 /* Hero */
 .zero {
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
                 url(''); /* IT Background */
     background-size: cover;
@@ -310,4 +310,5 @@ footer {
   from, to { border-color: transparent }
   50% { border-color: #2563eb; }
 }
+
 
