@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script type="application/ld+json">
 {
@@ -16,131 +17,540 @@
 </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="QbNseNYdkF5f6ioyo2MjVJiTEKB3uqKqeOF0TJwAKIg" />
-<meta name="description" content="Official portfolio of Ishor Acharya. Providing expert IT solutions, education consulting, and career guidance in Nepal.">
-<meta name="keywords" content="Ishor Acharya,Ishor, IT Consultant Nepal, Education Consultant Nepal, Ishor Acharya Website">
+    <meta name="description"
+        content="Official portfolio of Ishor Acharya. Providing expert IT solutions, education consulting, and career guidance in Nepal.">
+    <meta name="keywords"
+        content="Ishor Acharya,Ishor, IT Consultant Nepal, Education Consultant Nepal, Ishor Acharya Website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ishor Acharya | Educational Consultant</title>
+    <link rel="icon" href="ishor_acharya_logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init("ES5LaZcR2f8ThGLro"); // You will need to replace this with your actual public key
+        })();
+    </script>
 </head>
-<div id="successMessage" style="display:none; background: #22c55e; color: white; text-align: center; padding: 15px; position: fixed; top: 80px; width: 100%; z-index: 2000;">
+<div id="successMessage"
+    style="display:none; background: #22c55e; color: white; text-align: center; padding: 15px; position: fixed; top: 80px; width: 100%; z-index: 2000;">
     Booking Confirmed! Ishor has received your request.
 </div>
+
 <body>
 
     <nav class="navbar">
-        <div class="logo">ISHOR<span>ACHARYA</span></div>
+        <div class="logo">
+            Ishor <span class="text-primary">Acharya</span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-             <li><a href="#project">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-              
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav><section id="home" class="hero">
-           <div class="typewriter">
-  <h1>Hi, I'm Ishor.</h1>
-          <div class="hero-content">
-            <div class="typewriter">
-                
-             <p align:center>IT Specialist | Educational Consultant | Tech Influencer</p>
-            <a href="#contact" class="btn">Get In Touch</a>&nbsp;
-            <a href="#booking" class="btn">Book Me</a>
-        </div>
-    </section>
+    </nav>
 
-    <section id="about" class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-flex">
-            <div class="about-text">
-                <p>I’m Ishor Acharya, a Computer Engineering graduate with a strong passion for technology, problem-solving, and digital innovation. I have completed my bachelor’s degree in Computer Engineering in 2024 and have around 2.5 years of hands-on experience working with computers, software, and IT systems.
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <span class="greeting">Welcome to my portfolio</span>
+            <h1>Hi, <span class="highlight" id="typewriter-text"></span><span class="cursor">|</span></h1>
+            <div class="hero-roles">
+                <span>IT Specialist</span>
+                <span class="separator">•</span>
+                <span>Educational Consultant</span>
+                <span class="separator">•</span>
+                <span>Tech Influencer</span>
+            </div>
+            <p class="hero-description">
+                Empowering businesses with IT solutions and guiding students towards tech excellence.
+            </p>
 
-My interests span across IT solutions, software development, databases, and emerging AI technologies. I enjoy turning complex technical challenges into simple, practical solutions that actually help people and businesses. With a solid foundation in programming, database systems, and computer fundamentals.</p><br><p>I continuously strive to improve my skills and stay updated with modern tech trends.
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/er-ishor-acharya-389306327/" target="_blank" class="social-btn"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/ishor18" target="_blank" class="social-btn"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/ishor.acharya.75" target="_blank" class="social-btn"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ishor_18/" target="_blank" class="social-btn"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
 
-I’m someone who believes in continuous learning, smart use of technology, and taking calculated risks to grow professionally. Whether it’s building systems, solving technical issues, or exploring ways to use AI for productivity and income generation, I approach every project with focus and dedication.
+            <div class="hero-btns">
+                <a href="#booking" class="btn btn-primary">Book Consultation <i class="fas fa-calendar-check"></i></a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
 
-Based in Nepal, I aim to provide reliable, all-in-one IT solutions while growing as a tech professional in a rapidly evolving digital world. I am here to Talk about my experience in IT solutions and my passion for helping students with educational consulting.</p>
+            <div class="scroll-down">
+                <a href="#about">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="services" class="bg-light">
+    <section id="about" class="container reveal">
+        <div class="about-wrapper">
+            <div class="about-visual">
+                <div class="about-card-visual">
+                    <img src="okay.jpg" alt="Ishor Acharya">
+                </div>
+                <!-- Visual Stats floating -->
+                <div class="visual-stat stat-1">
+                    <i class="fas fa-code"></i>
+                    <span>Developer</span>
+                </div>
+                <div class="visual-stat stat-2">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Problem Solver</span>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <h4 class="sub-heading">My Intro</h4>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">About Me</h2>
+                <p class="about-main-text">
+                    I’m <strong>Ishor Acharya</strong>, a Computer Engineering graduate (2024) with a passion for
+                    digital innovation. With around <strong>2.5 years of experience</strong> in IT systems and software,
+                    I bridge the gap between complex technology and practical solutions.
+                </p>
+                <div class="about-description">
+                    <p>My journey spans across software development, database management, and emerging AI technologies.
+                        Based in Nepal, I aim to provide reliable IT solutions while helping students navigate their own
+                        tech education paths.</p>
+                </div>
+
+                <div class="about-stats-grid">
+                    <div class="stat-box">
+                        <h3>02+</h3>
+                        <p>Years Exp.</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>10+</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+
+                <a href="Ishoracharya.pdf" target="_blank" class="btn btn-primary" style="margin-top: 25px;">View CV <i
+                        class="fas fa-eye"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container reveal" style="background-color: #f8fafc;">
+        <h2 class="section-title">My Expertise</h2>
+        <p class="section-subtitle">Specialized skills and services I offer to help you succeed</p>
+
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>IT Solutions</h3>
+                <p>Custom software development, networking, and system maintenance tailored for businesses.</p>
+                <ul class="expertise-list">
+                    <li><i class="fas fa-check"></i> Software Development</li>
+                    <li><i class="fas fa-check"></i> Network Setup & Security</li>
+                    <li><i class="fas fa-check"></i> System Maintenance</li>
+                </ul>
+            </div>
+
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Tech Education Consulting</h3>
+                <p>Guiding students through tech-related education paths and career opportunities in Nepal.</p>
+                <ul class="expertise-list">
+                    <li><i class="fas fa-check"></i> IT Course Guidance</li>
+                    <li><i class="fas fa-check"></i> Programming Training</li>
+                    <li><i class="fas fa-check"></i> Tech Career Counseling</li>
+                </ul>
+            </div>
+
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Digital Strategy</h3>
+                <p>Helping brands grow their online presence through data-driven tech solutions.</p>
+                <ul class="expertise-list">
+                    <li><i class="fas fa-check"></i> Digital Marketing</li>
+                    <li><i class="fas fa-check"></i> SEO & Analytics</li>
+                    <li><i class="fas fa-check"></i> Brand Development</li>
+                </ul>
+            </div>
+
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Database Management</h3>
+                <p>Designing and maintaining efficient database systems for optimal performance.</p>
+                <ul class="expertise-list">
+                    <li><i class="fas fa-check"></i> Database Design</li>
+                    <li><i class="fas fa-check"></i> Data Migration</li>
+                    <li><i class="fas fa-check"></i> Performance Optimization</li>
+                </ul>
+            </div>
+
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Academic Tutoring</h3>
+                <p>Personalized tutoring and academic support to help students excel in their studies.</p>
+                <ul class="expertise-list">
+                    <li><i class="fas fa-check"></i> Subject Tutoring</li>
+                    <li><i class="fas fa-check"></i> Exam Preparation</li>
+                    <li><i class="fas fa-check"></i> Assignment Help</li>
+                </ul>
+            </div>
+
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Personal Consultation</h3>
+                <p>One-on-one guidance to help you navigate career decisions and personal challenges.</p>
+                <ul class="expertise-list">
+                    <li><i class="fas fa-check"></i> Career Guidance</li>
+                    <li><i class="fas fa-check"></i> Personal Problems</li>
+                    <li><i class="fas fa-check"></i> Life Coaching</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="bg-light reveal">
         <div class="container">
-            <h2 class="section-title">My Expertise</h2>
-            <div class="services-grid">
-                <div class="card">
-                    <h3>IT Solutions</h3>
-                    <p>Custom software development, networking, and system maintenance tailored for businesses.</p>
+            <h2 class="section-title">Book a Consultation</h2>
+            <p class="section-subtitle">Schedule a meeting to discuss your needs and how I can help you achieve your
+                goals.</p>
+
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <div class="booking-feature">
+                        <div class="booking-feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="booking-feature-text">
+                            <h4>Flexible Scheduling</h4>
+                            <p>Choose a time that works best for you</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-feature">
+                        <div class="booking-feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="booking-feature-text">
+                            <h4>IT Solutions</h4>
+                            <p>Software, networking & system support</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-feature">
+                        <div class="booking-feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="booking-feature-text">
+                            <h4>Education Consulting</h4>
+                            <p>Abroad study guidance & career advice</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-feature">
+                        <div class="booking-feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="booking-feature-text">
+                            <h4>30-60 Min Sessions</h4>
+                            <p>Personalized one-on-one consultation</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Educational Consulting</h3>
-                    <p>Guiding students through the complex process of abroad study and career path selection.</p>
-                </div>
-                <div class="card">
-                    <h3>Digital Strategy</h3>
-                    <p>Helping brands grow their online presence through data-driven tech solutions.</p>
+
+                <div class="booking-cta">
+                    <div class="booking-cta-card">
+                        <i class="fas fa-calendar-alt booking-cta-icon"></i>
+                        <h3>Ready to Get Started?</h3>
+                        <p>Click below to view my availability and book a convenient time slot.</p>
+                        <a href="https://calendly.com/ishoracharya-bct076-mbman" target="_blank"
+                            class="btn booking-btn">
+                            <i class="fas fa-external-link-alt"></i> Open My Calendar
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="booking" class="container">
-    <h2 class="section-title">Book a Consultation</h2>
-    <div class="booking-container" style="text-align: center;">
-        <p>Choose a time that works for you to discuss IT solutions or abroad study.</p>
-        <br>
-        <a href="https://calendly.com/ishoracharya-bct076-mbman" target="_blank" class="btn btn-full">Open My Calendar</a>
-    </div>
 
-</section>
- <section id="project" class="zero">
-        <div class="hero-content">
-            <marquee><h1 align:center> Project are on developing phases.</h1></marquee>
-                   </div>
-    </section>
+    <section id="project" class="container reveal">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">Showcasing my work in IT solutions and digital innovation</p>
 
-    <section id="contact" class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-box">
-  
-<div class="contact-methods">
-    <a href="mailto:ishoracharya977@gmail.com" class="mail-link">
-        <i class="fas fa-envelope"></i> E-mail Me
-    </a>
-    
-    <a href="https://wa.me/9807941441" target="_blank" class="whatsapp-link">
-        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-    </a>
-</div>
-            <p>Contact No.: +977 9807941441</p>
-               
-
-            
-                <a href="https://www.linkedin.com/in/er-ishor-acharya-389306327/">LinkedIn</a> | <a href="https://github.com/ishor18">Github</a> | <a href="https://www.facebook.com/ishor.acharya.75">Facebook</a>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <span class="project-status status-progress">In Progress</span>
+                <h3>Portfolio Website</h3>
+                <p>A modern, responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my
+                    skills and services.</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
             </div>
-       
-            <p>Location: Damak, Nepal</p>
-            <section id="location" class="container">
 
-    <h2 class="section-title">Visit My Office</h2>
-    <div class="map-container">
-        <div style="width: 100%; overflow: hidden;">
-   
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1782.5489164306127!2d87.69082953843436!3d26.677353390884328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQwJzM4LjUiTiA4N8KwNDEnMzEuNiJF!5e0!3m2!1sen!2snp!4v1767896235344!5m2!1sen!2snp" 
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="project-status status-planning">Planning</span>
+                <h3>Student Guidance Portal</h3>
+                <p>An upcoming platform to help students navigate abroad study opportunities with resources and
+                    consultation booking.</p>
+                <div class="project-tags">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                </div>
+            </div>
 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-</div>
-    </div>
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <span class="project-status status-planning">Planning</span>
+                <h3>IT Solutions Dashboard</h3>
+                <p>A comprehensive dashboard for businesses to manage their IT infrastructure, support tickets, and
+                    system health.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <span class="project-status status-planning">Planning</span>
+                <h3>AI Chatbot Assistant</h3>
+                <p>An intelligent chatbot to automate customer support and provide instant responses to common
+                    queries.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>OpenAI</span>
+                    <span>Flask</span>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section id="testimonials" class="bg-light reveal">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <p class="section-subtitle">Feedback from clients and students I've worked with</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"Ishor provided excellent guidance for my abroad study application. His
+                        tech
+                        insights helped me choose the right university for Computer Science."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarthak Dahal</h4>
+                            <p>Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"Great work on our business website! The design is modern, and the
+                        system
+                        runs smoothly. Highly recommended for IT solutions."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Suman Guragain</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"Very helpful with career counseling. I was confused about my tech
+                        career
+                        path, and Ishor's advice clarified everything."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Drishya Karki</h4>
+                            <p>Tech Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container reveal">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a question or want to work together? Reach out through any of these
+            channels.
+        </p>
+
+        <div class="contact-grid">
+            <!-- Email Card -->
+            <a href="mailto:ishoracharya.bct076@mbman.edu.np" class="contact-card">
+                <div class="contact-icon email-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>ishoracharya.bct076@mbman.edu.np</p>
+            </a>
+
+            <!-- WhatsApp Card -->
+            <a href="https://wa.me/9807941441" target="_blank" class="contact-card">
+                <div class="contact-icon whatsapp-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <p>+977 9807941441</p>
+            </a>
+
+            <!-- Phone Card -->
+            <a href="tel:+9779807941441" class="contact-card">
+                <div class="contact-icon phone-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone</h3>
+                <p>+977 9807941441</p>
+            </a>
+
+            <!-- Location Card -->
+            <a href="https://www.google.com/maps/place/26%C2%B040'38.5%22N+87%C2%B041'31.6%22E" target="_blank"
+                class="contact-card">
+                <div class="contact-icon location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location</h3>
+                <p>Damak, Nepal</p>
+            </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <h3>Connect With Me</h3>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/er-ishor-acharya-389306327/" target="_blank"
+                    class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/ishor18" target="_blank" class="social-icon github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/ishor.acharya.75" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="message-form" class="bg-light reveal">
+        <div class="container">
+            <h2 class="section-title">Leave a Message</h2>
+            <p class="section-subtitle">Feel free to drop a message or feedback below</p>
+
+            <div class="message-container">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" placeholder="name@gmail.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="IT Consultation">IT Consultation</option>
+                            <option value="Education Guidance">Education Guidance</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">Send Message</button>
+                    <div class="status-msg" style="display:none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="container reveal">
+        <h2 class="section-title">Visit My Office</h2>
+        <div class="map-container">
+            <div style="width: 100%; overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1782.5489164306127!2d87.69082953843436!3d26.677353390884328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQwJzM4LjUiTiA4N8KwNDEnMzEuNiJF!5e0!3m2!1sen!2snp!4v1767896235344!5m2!1sen!2snp"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
     <footer>
         <p>&copy; 2025 Ishor Acharya. All Rights Reserved.</p>
     </footer>
@@ -149,12 +559,3 @@ Based in Nepal, I aim to provide reliable, all-in-one IT solutions while growing
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
