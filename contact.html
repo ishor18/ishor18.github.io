@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ishor Acharya",
+  "url": "https://www.ishoracharya.com.np",
+  "jobTitle": "Educational Consultant",
+  "sameAs": [
+    "https://www.facebook.com/ishor.acharya.75",
+    "https://www.linkedin.com/in/er-ishor-acharya-389306327/"
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Ishor Acharya for IT consultation, education guidance, or general inquiries. Based in Damak, Nepal.">
+    <meta charset="UTF-8">
+    <title>Contact | Ishor Acharya</title>
+    <link rel="icon" href="ishor_acharya_logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init("ES5LaZcR2f8ThGLro");
+        })();
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            Ishor <span class="text-primary">Acharya</span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div style="height: 80px;"></div>
+
+    <section id="contact" class="container reveal">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a question or want to work together? Reach out through any of these
+            channels.
+        </p>
+
+        <div class="contact-grid">
+            <!-- Email Card -->
+            <a href="mailto:ishoracharya.bct076@mbman.edu.np" class="contact-card">
+                <div class="contact-icon email-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>ishoracharya.bct076@mbman.edu.np</p>
+            </a>
+
+            <!-- WhatsApp Card -->
+            <a href="https://wa.me/9807941441" target="_blank" class="contact-card">
+                <div class="contact-icon whatsapp-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <p>+977 9807941441</p>
+            </a>
+
+            <!-- Phone Card -->
+            <a href="tel:+9779807941441" class="contact-card">
+                <div class="contact-icon phone-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone</h3>
+                <p>+977 9807941441</p>
+            </a>
+
+            <!-- Location Card -->
+            <a href="https://www.google.com/maps/place/26%C2%B040'38.5%22N+87%C2%B041'31.6%22E" target="_blank"
+                class="contact-card">
+                <div class="contact-icon location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location</h3>
+                <p>Damak, Nepal</p>
+            </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <h3>Connect With Me</h3>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/er-ishor-acharya-389306327/" target="_blank"
+                    class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/ishor18" target="_blank" class="social-icon github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/ishor.acharya.75" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="message-form" class="bg-light reveal">
+        <div class="container">
+            <h2 class="section-title">Leave a Message</h2>
+            <p class="section-subtitle">Feel free to drop a message or feedback below</p>
+
+            <div class="message-container">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" placeholder="name@gmail.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="IT Consultation">IT Consultation</option>
+                            <option value="Education Guidance">Education Guidance</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">Send Message</button>
+                    <div class="status-msg" style="display:none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="container reveal">
+        <h2 class="section-title">Visit My Office</h2>
+        <div class="map-container">
+            <div style="width: 100%; overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1782.5489164306127!2d87.69082953843436!3d26.677353390884328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQwJzM4LjUiTiA4N8KwNDEnMzEuNiJF!5e0!3m2!1sen!2snp!4v1767896235344!5m2!1sen!2snp"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <footer>
+        <p>&copy; 2025 Ishor Acharya. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
