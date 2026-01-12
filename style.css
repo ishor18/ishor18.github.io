@@ -310,5 +310,51 @@ footer {
   from, to { border-color: transparent }
   50% { border-color: #2563eb; }
 }
+/* --- MOBILE FIXES --- */
+@media (max-width: 768px) {
+    /* 1. Prevent the page from shaking or scrolling sideways */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 2. Fix the Hero Section (The "Hi, I'm Ishor" part) */
+    .hero-section {
+        padding: 40px 20px; /* Give text some breathing room from the edges */
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 28px !important; /* Shrink the large heading */
+        line-height: 1.2;
+    }
+
+    /* 3. Stack buttons vertically so they don't overlap */
+    .button-group, .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* 4. Fix the Map and Images */
+    iframe, img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 5. Fix "My Expertise" cards */
+    .expertise-container, .services-grid {
+        display: block; /* Stack cards on top of each other */
+        padding: 10px;
+    }
+
+    .card {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+}
 
 
