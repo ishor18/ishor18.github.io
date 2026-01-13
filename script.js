@@ -78,17 +78,35 @@ if (contactForm) {
         btn.innerText = 'Sending...';
         btn.disabled = true;
 
-        // Prepare template parameters
+        // Prepare template parameters with redundant keys for maximum compatibility
         const templateParams = {
             from_name: document.getElementById('name').value,
             from_email: document.getElementById('email').value,
-            reply_to: document.getElementById('email').value, // Allows direct reply
+            reply_to: document.getElementById('email').value,
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value,
-            to_email: 'ishoracharya.bct076@mbman.edu.np'
+            // Dynamically set receiver if you want to send a confirmation to the visitor
+            to_email: document.getElementById('email').value,
+            to_name: document.getElementById('name').value
         };
 
         console.log('Attempting to send email with params:', templateParams);
+
+        // Send to Google Sheets (Message Storage)
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxh-G4VO7JE5uWHq-AzvxUEbum9d0F0O5SN5q21HKR80Jvt92arp7vKUXO_LABFiDpZ/exec';
+
+        // Using URLSearchParams for better compatibility with Apps Script
+        const formData = new URLSearchParams();
+        formData.append('from_name', templateParams.from_name);
+        formData.append('from_email', templateParams.from_email);
+        formData.append('subject', templateParams.subject);
+        formData.append('message', templateParams.message);
+
+        fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        }).catch(err => console.error('Sheet Storage Error:', err));
 
         // Send email using EmailJS
         emailjs.send('service_edjxp4e', 'template_khlnxeb', templateParams)
