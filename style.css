@@ -940,6 +940,9 @@ footer {
     color: var(--text);
     font-size: 0.9rem;
     margin: 0;
+    word-break: break-all;
+    /* Fixes long email addresses overflow */
+    line-height: 1.4;
 }
 
 /* Social Links */
