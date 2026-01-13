@@ -79,20 +79,22 @@ if (contactForm) {
         btn.disabled = true;
 
         // Prepare template parameters
-        // These keys must match your EmailJS template variables
         const templateParams = {
             from_name: document.getElementById('name').value,
             from_email: document.getElementById('email').value,
+            reply_to: document.getElementById('email').value, // Allows direct reply
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value,
             to_email: 'ishoracharya.bct076@mbman.edu.np'
         };
 
+        console.log('Attempting to send email with params:', templateParams);
+
         // Send email using EmailJS
-        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with actual IDs from EmailJS dashboard
         emailjs.send('service_edjxp4e', 'template_khlnxeb', templateParams)
-            .then(function () {
+            .then(function (response) {
                 // Success
+                console.log('EmailJS Success:', response.status, response.text);
                 statusMsg.style.display = 'block';
                 statusMsg.style.color = '#22c55e';
                 statusMsg.innerText = 'Message sent successfully! I will get back to you soon.';
@@ -102,10 +104,10 @@ if (contactForm) {
                 }, 5000);
             }, function (error) {
                 // Error
+                console.error('EmailJS Error Details:', error);
                 statusMsg.style.display = 'block';
                 statusMsg.style.color = '#ef4444';
                 statusMsg.innerText = 'Failed to send message. Please try again or email directly.';
-                console.error('EmailJS Error:', error);
             })
             .finally(function () {
                 // Reset button
