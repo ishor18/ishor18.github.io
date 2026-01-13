@@ -992,6 +992,10 @@ footer {
     background: linear-gradient(135deg, #1877f2, #3b5998);
 }
 
+.social-icon.instagram {
+    background: linear-gradient(135deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888);
+}
+
 @media (max-width: 768px) {
     .contact-grid {
         grid-template-columns: 1fr 1fr;
