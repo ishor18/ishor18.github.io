@@ -135,7 +135,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     /* More neutral, lighter overlay so the image is clearer */
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%),
         url('ishoracharya.png');
@@ -149,7 +149,8 @@ body {
     text-align: center;
     color: white;
     position: relative;
-    padding: 0 10%;
+    padding: 80px 10% 40px;
+    /* Added top padding to prevent navbar overlap */
 }
 
 .hero-container {
@@ -337,6 +338,13 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        background-position: center top;
+        min-height: 100vh;
+        padding-top: 100px;
+    }
+
     .hero h1 {
         font-size: 2.8rem;
     }
@@ -1379,4 +1387,3 @@ footer {
     transform: translateY(0);
     opacity: 1;
 }
-
