@@ -1,0 +1,139 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "name": "Portfolio Website",
+      "icon": "fas fa-laptop-code",
+      "status": "completed",
+      "description": "Modern portfolio built with HTML/JS.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "link": "https://ishoracharya.com.np"
+    },
+    {
+      "id": "p2",
+      "name": "Student Guidance Portal",
+      "icon": "fas fa-graduation-cap",
+      "status": "progress",
+      "description": "Helping students for abroad studies.",
+      "tags": [
+        "React",
+        "Node"
+      ],
+      "link": ""
+    },
+    {
+      "id": "p3",
+      "name": "IT Solutions Dashboard",
+      "icon": "fas fa-network-wired",
+      "status": "planning",
+      "description": "Business IT management system.",
+      "tags": [
+        "Python",
+        "Django"
+      ],
+      "link": ""
+    },
+    {
+      "id": "p4",
+      "name": "AI Chatbot Assistant",
+      "icon": "fas fa-robot",
+      "status": "planning",
+      "description": "OpenAI powered customer support.",
+      "tags": [
+        "Python",
+        "OpenAI"
+      ],
+      "link": ""
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Sarthak Dahal",
+      "role": "Student",
+      "text": "Ishor provided excellent guidance for my abroad study.",
+      "photo": null
+    },
+    {
+      "id": "t2",
+      "name": "Suman Guragain",
+      "role": "Business Owner",
+      "text": "Great work on our business website!",
+      "photo": null
+    },
+    {
+      "id": "t3",
+      "name": "Drishya Karki",
+      "role": "Tech Enthusiast",
+      "text": "Very helpful with career counseling.",
+      "photo": null
+    }
+  ],
+  "expertise": [
+    {
+      "id": "e1",
+      "icon": "fas fa-code",
+      "title": "IT Solutions",
+      "description": "Custom development & networking.",
+      "skills": [
+        "Dev",
+        "Security"
+      ]
+    },
+    {
+      "id": "e2",
+      "icon": "fas fa-user-graduate",
+      "title": "Tech Education",
+      "description": "Career path guidance.",
+      "skills": [
+        "Guidance",
+        "Training"
+      ]
+    },
+    {
+      "id": "e3",
+      "icon": "fas fa-chart-line",
+      "title": "Digital Strategy",
+      "description": "Growing online brands.",
+      "skills": [
+        "SEO",
+        "Analytics"
+      ]
+    },
+    {
+      "id": "e4",
+      "icon": "fas fa-database",
+      "title": "Database Management",
+      "description": "Performance optimization.",
+      "skills": [
+        "SQL",
+        "Migration"
+      ]
+    },
+    {
+      "id": "e5",
+      "icon": "fas fa-book-open",
+      "title": "Academic Tutoring",
+      "description": "Personalized support.",
+      "skills": [
+        "Tutoring",
+        "Exams"
+      ]
+    },
+    {
+      "id": "e6",
+      "icon": "fas fa-comments",
+      "title": "Personal Consultation",
+      "description": "One-on-one guidance.",
+      "skills": [
+        "Life Coaching",
+        "Careers"
+      ]
+    }
+  ],
+  "timestamp": "2026-01-14T16:51:45.247Z"
+}
