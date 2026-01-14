@@ -1,0 +1,29 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor/IDE folders
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# AI Assistant files
+.gemini/
+.agent/
+.cursor/
+
+# Backups and Logs
+*.log
+*.bak
+*.tmp
+
+# Data Backups (if you save your exported JSONs in the project folder)
+portfolio-data-*.json
