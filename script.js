@@ -210,3 +210,22 @@ function reveal() {
         }
     }
 }
+// Example helper function to generate the badge HTML
+function getStatusBadgeHTML(statusValue) {
+    // statusValue is coming from your <select> value: 'completed', 'progress', or 'planning'
+    
+    let badgeClass = '';
+    let statusText = '';
+    if (statusValue === 'completed') {
+        badgeClass = 'completed'; // matches the .status-badge.completed CSS
+        statusText = 'Completed';
+    } else if (statusValue === 'progress') {
+        badgeClass = 'in-progress'; // matches the .status-badge.in-progress CSS
+        statusText = 'In Progress';
+    } else if (statusValue === 'planning') {
+        badgeClass = 'planning'; // We can add a style for this too if needed
+        statusText = 'Planning';
+    }
+    return `<span class="status-badge ${badgeClass}">${statusText}</span>`;
+}
+
