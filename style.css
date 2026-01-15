@@ -547,7 +547,32 @@ body {
     font-size: 1.5rem;
     color: white;
 }
-
+/* Base Style for All Badges */
+.status-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+/* 1. Compeleted (GREEN) */
+.status-badge.completed {
+    background-color: #d1fae5;
+    color: #059669; /* Deep Green */
+}
+/* 2. In Progress (YELLOW) */
+.status-badge.in-progress {
+    background-color: #fef3c7;
+    color: #d97706; /* Deep Yellow/Orange */
+}
+/* 3. Planning (BLUE - Optional suggestion) */
+.status-badge.planning {
+    background-color: #dbeafe;
+    color: #2563eb; /* Deep Blue */
+}
 .project-status {
     display: inline-block;
     padding: 5px 12px;
@@ -1403,4 +1428,5 @@ footer {
 .reveal.active {
     transform: translateY(0);
     opacity: 1;
+
 }
