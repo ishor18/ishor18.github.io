@@ -33,12 +33,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 8%;
-    background: var(--dark);
+    padding: 15px 8%;
+    background: rgba(15, 23, 42, 0.7);
+    /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px);
     color: white;
     position: fixed;
     width: 100%;
     z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -515,6 +520,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .project-card::before {
@@ -547,32 +553,41 @@ body {
     font-size: 1.5rem;
     color: white;
 }
+
 /* Base Style for All Badges */
 .status-badge {
     display: inline-block;
     padding: 6px 16px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
+    /* Pill shape */
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 15px;
 }
+
 /* 1. Compeleted (GREEN) */
 .status-badge.completed {
     background-color: #d1fae5;
-    color: #059669; /* Deep Green */
+    color: #059669;
+    /* Deep Green */
 }
+
 /* 2. In Progress (YELLOW) */
 .status-badge.in-progress {
     background-color: #fef3c7;
-    color: #d97706; /* Deep Yellow/Orange */
+    color: #d97706;
+    /* Deep Yellow/Orange */
 }
+
 /* 3. Planning (BLUE - Optional suggestion) */
 .status-badge.planning {
     background-color: #dbeafe;
-    color: #2563eb; /* Deep Blue */
+    color: #2563eb;
+    /* Deep Blue */
 }
+
 .project-status {
     display: inline-block;
     padding: 5px 12px;
@@ -594,7 +609,7 @@ body {
     color: #4f46e5;
 }
 
-.status-complete {
+.status-completed {
     background: #d1fae5;
     color: #059669;
 }

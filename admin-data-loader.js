@@ -48,13 +48,16 @@ const renderProjects = (projects) => {
     projects.forEach(p => {
         const div = document.createElement('div');
         div.className = 'project-card';
+        if (p.link) {
+            div.onclick = () => window.open(p.link, '_blank');
+            div.title = `Click to view ${p.name}`;
+        }
         div.innerHTML = `
             <div class="project-icon"><i class="${p.icon}"></i></div>
             <span class="project-status status-${p.status}">${p.status === 'completed' ? 'Completed' : p.status === 'progress' ? 'In Progress' : 'Planning'}</span>
             <h3>${p.name}</h3>
             <p>${p.description}</p>
             <div class="project-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
-            ${p.link ? `<a href="${p.link}" target="_blank" class="project-link" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;color:var(--primary);text-decoration:none"><i class="fas fa-external-link-alt"></i> View Project</a>` : ''}
         `;
         grid.appendChild(div);
     });

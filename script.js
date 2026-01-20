@@ -8,6 +8,17 @@ if (mobileMenu) {
     });
 }
 
+// Simple Visitor Tracker (Local Session based)
+(function trackVisitors() {
+    const hasVisited = sessionStorage.getItem('hasVisited');
+    if (!hasVisited) {
+        let count = parseInt(localStorage.getItem('visitorCount') || '0');
+        count++;
+        localStorage.setItem('visitorCount', count.toString());
+        sessionStorage.setItem('hasVisited', 'true');
+    }
+})();
+
 // Close mobile menu when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
@@ -21,13 +32,15 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = '#070c1a'; // Darker on scroll
-        navbar.style.padding = '8px 8%';      // Keep compact
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+        navbar.style.background = 'rgba(7, 12, 26, 0.85)'; // Slightly darker glass
+        navbar.style.padding = '10px 8%';                 // Subtle shrink
+        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+        navbar.style.backdropFilter = 'blur(15px)';
     } else {
-        navbar.style.background = '#0f172a';  // Original Color
-        navbar.style.padding = '8px 8%';      // Match CSS initial state
+        navbar.style.background = 'rgba(15, 23, 42, 0.7)'; // Original glass state
+        navbar.style.padding = '15px 8%';
         navbar.style.boxShadow = 'none';
+        navbar.style.backdropFilter = 'blur(10px)';
     }
 });
 
@@ -213,7 +226,7 @@ function reveal() {
 // Example helper function to generate the badge HTML
 function getStatusBadgeHTML(statusValue) {
     // statusValue is coming from your <select> value: 'completed', 'progress', or 'planning'
-    
+
     let badgeClass = '';
     let statusText = '';
     if (statusValue === 'completed') {

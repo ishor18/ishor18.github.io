@@ -13,9 +13,8 @@ if (adminEmailDisplay) adminEmailDisplay.textContent = localStorage.getItem('adm
 const initializeData = (force = false) => {
     console.log("Checking and Initializing Data...");
 
-    // 1. ALL PROJECTS (Ensure 4)
-    const projects = JSON.parse(localStorage.getItem('projects') || '[]');
-    if (projects.length < 4 || force) {
+    // 1. ALL PROJECTS (Initial setup if empty)
+    if (!localStorage.getItem('projects') || force) {
         const defaultProjects = [
             { id: "p1", name: "Portfolio Website", icon: "fas fa-laptop-code", status: "completed", description: "Modern portfolio built with HTML/JS.", tags: ["HTML", "CSS", "JS"], link: "https://ishoracharya.com.np" },
             { id: "p2", name: "Student Guidance Portal", icon: "fas fa-graduation-cap", status: "progress", description: "Helping students for abroad studies.", tags: ["React", "Node"], link: "" },
@@ -25,9 +24,8 @@ const initializeData = (force = false) => {
         localStorage.setItem('projects', JSON.stringify(defaultProjects));
     }
 
-    // 2. ALL TESTIMONIALS (Ensure 3)
-    const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
-    if (testimonials.length < 3 || force) {
+    // 2. ALL TESTIMONIALS (Initial setup if empty)
+    if (!localStorage.getItem('testimonials') || force) {
         const defaultTestimonials = [
             { id: "t1", name: "Sarthak Dahal", role: "Student", text: "Ishor provided excellent guidance for my abroad study.", photo: null },
             { id: "t2", name: "Suman Guragain", role: "Business Owner", text: "Great work on our business website!", photo: null },
@@ -36,9 +34,8 @@ const initializeData = (force = false) => {
         localStorage.setItem('testimonials', JSON.stringify(defaultTestimonials));
     }
 
-    // 3. ALL EXPERTISE (Ensure 6)
-    const expertise = JSON.parse(localStorage.getItem('expertise') || '[]');
-    if (expertise.length < 6 || force) {
+    // 3. ALL EXPERTISE (Initial setup if empty)
+    if (!localStorage.getItem('expertise') || force) {
         const defaultExpertise = [
             { id: "e1", icon: "fas fa-code", title: "IT Solutions", description: "Custom development & networking.", skills: ["Dev", "Security"] },
             { id: "e2", icon: "fas fa-user-graduate", title: "Tech Education", description: "Career path guidance.", skills: ["Guidance", "Training"] },
@@ -126,10 +123,12 @@ const updateStats = () => {
     const p = JSON.parse(localStorage.getItem('projects') || '[]');
     const t = JSON.parse(localStorage.getItem('testimonials') || '[]');
     const e = JSON.parse(localStorage.getItem('expertise') || '[]');
+    const v = localStorage.getItem('visitorCount') || '0';
     document.getElementById('totalProjects').textContent = p.length;
     document.getElementById('completedProjects').textContent = p.filter(x => x.status === 'completed').length;
     document.getElementById('totalTestimonials').textContent = t.length;
     document.getElementById('totalExpertise').textContent = e.length;
+    if (document.getElementById('totalVisitors')) document.getElementById('totalVisitors').textContent = v;
 };
 
 // ==================== MODAL ACTIONS ====================
@@ -227,6 +226,38 @@ document.addEventListener('DOMContentLoaded', () => {
         b.onclick = () => document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
     });
 
+    // --- Add Button Handlers ---
+    const addProjectBtn = document.getElementById('addProjectBtn');
+    if (addProjectBtn) {
+        addProjectBtn.onclick = () => {
+            document.getElementById('projectForm').reset();
+            document.getElementById('projectId').value = '';
+            document.getElementById('projectModalTitle').textContent = 'Add New Project';
+            document.getElementById('projectModal').classList.add('show');
+        };
+    }
+
+    const addTestimonialBtn = document.getElementById('addTestimonialBtn');
+    if (addTestimonialBtn) {
+        addTestimonialBtn.onclick = () => {
+            document.getElementById('testimonialForm').reset();
+            document.getElementById('testimonialId').value = '';
+            document.getElementById('testimonialImagePreview').style.display = 'none';
+            document.getElementById('testimonialModalTitle').textContent = 'Add New Testimonial';
+            document.getElementById('testimonialModal').classList.add('show');
+        };
+    }
+
+    const addExpertiseBtn = document.getElementById('addExpertiseBtn');
+    if (addExpertiseBtn) {
+        addExpertiseBtn.onclick = () => {
+            document.getElementById('expertiseForm').reset();
+            document.getElementById('expertiseId').value = '';
+            document.getElementById('expertiseModalTitle').textContent = 'Add New Expertise';
+            document.getElementById('expertiseModal').classList.add('show');
+        };
+    }
+
     // Save Handlers (Simplified)
     document.getElementById('saveProjectBtn').onclick = () => {
         const id = document.getElementById('projectId').value || Date.now().toString();
@@ -291,6 +322,106 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('testimonialImagePreview').style.display = 'block';
             };
             reader.readAsDataURL(e.target.files[0]);
+        }
+    };
+
+    // --- Settings / Data Handlers ---
+
+    // Save Backup URL
+    const saveBackupBtn = document.getElementById('saveBackupSettingsBtn');
+    const backupInput = document.getElementById('backupScriptUrl');
+    if (backupInput) backupInput.value = localStorage.getItem('backupScriptUrl') || '';
+
+    if (saveBackupBtn) {
+        saveBackupBtn.onclick = () => {
+            const url = document.getElementById('backupScriptUrl').value;
+            localStorage.setItem('backupScriptUrl', url);
+            showSuccess('Backup URL saved!');
+        };
+    }
+
+    // Save Visitor Count
+    const saveVisitorBtn = document.getElementById('saveVisitorBtn');
+    const visitorInput = document.getElementById('visitorCountInput');
+    if (visitorInput) visitorInput.value = localStorage.getItem('visitorCount') || '0';
+
+    if (saveVisitorBtn) {
+        saveVisitorBtn.onclick = () => {
+            const count = document.getElementById('visitorCountInput').value;
+            localStorage.setItem('visitorCount', count);
+            updateStats();
+            showSuccess('Visitor count updated!');
+        };
+    }
+
+    // Export Data
+    const exportBtn = document.getElementById('exportDataBtn');
+    if (exportBtn) {
+        exportBtn.onclick = () => {
+            const data = {
+                projects: JSON.parse(localStorage.getItem('projects') || '[]'),
+                testimonials: JSON.parse(localStorage.getItem('testimonials') || '[]'),
+                expertise: JSON.parse(localStorage.getItem('expertise') || '[]'),
+                visitorCount: localStorage.getItem('visitorCount') || '0'
+            };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `portfolio-data-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+        };
+    }
+
+    // Import Data
+    const importBtn = document.getElementById('importDataBtn');
+    if (importBtn) {
+        importBtn.onclick = () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'application/json';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    try {
+                        const data = JSON.parse(ev.target.result);
+                        if (data.projects) localStorage.setItem('projects', JSON.stringify(data.projects));
+                        if (data.testimonials) localStorage.setItem('testimonials', JSON.stringify(data.testimonials));
+                        if (data.expertise) localStorage.setItem('expertise', JSON.stringify(data.expertise));
+                        if (data.visitorCount) localStorage.setItem('visitorCount', data.visitorCount);
+                        showSuccess('Data imported successfully!');
+                        location.reload();
+                    } catch (err) {
+                        alert('Invalid JSON file.');
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        };
+    }
+
+    // Clear Data
+    const clearBtn = document.getElementById('clearDataBtn');
+    if (clearBtn) {
+        clearBtn.onclick = () => {
+            if (confirm('Are you sure? This will reset all data to defaults.')) {
+                initializeData(true);
+                showSuccess('Data reset to defaults.');
+                location.reload();
+            }
+        };
+    }
+
+    // Helper to show success message
+    const showSuccess = (text) => {
+        const msg = document.getElementById('successMessage');
+        const span = document.getElementById('successText');
+        if (msg && span) {
+            span.textContent = text;
+            msg.classList.add('show');
+            setTimeout(() => msg.classList.remove('show'), 3000);
         }
     };
 
