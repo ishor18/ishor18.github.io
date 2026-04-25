@@ -2,7 +2,7 @@
 
 ## Access Information
 
-**Admin Panel URL:** `http://ishoracharya.com.np/admin.html`
+**Admin Panel URL:** `http://ishoracharya.com.np`
 
 
 ## Features
